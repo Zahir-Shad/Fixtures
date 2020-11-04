@@ -4,9 +4,12 @@
     <shape android:shape="rectangle">
         <gradient android:startColor="@color/cardview_light_background"
             android:endColor="@color/cardview_shadow_start_color"/>
-
+<corners
+    android:topLeftRadius="10dp"
+    android:topRightRadius="10dp"
+    android:bottomLeftRadius="0dp"
+    android:bottomRightRadius="0dp"
+    />
     </shape>
-
 </item>
-
 </selector>
