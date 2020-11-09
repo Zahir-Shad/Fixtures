@@ -9,24 +9,22 @@
     android:padding="12dp">
 
     <TextView
-        android:id="@+id/homeLeague"
+        android:id="@+id/championLeague"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Champion League"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/stadium"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/stadium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Staples Stadium  |"
-        app:layout_constraintTop_toBottomOf="@+id/homeLeague"
+        android:text="Staples Stadium  |  "
+        app:layout_constraintTop_toBottomOf="@+id/championLeague"
         app:layout_constraintBottom_toTopOf="@+id/homeNameLeague"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -34,10 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2002/04/11"
-        app:layout_constraintTop_toBottomOf="@+id/homeLeague"
-        app:layout_constraintBottom_toBottomOf="@+id/homeNameLeague"
-        app:layout_constraintEnd_toEndOf="@id/stadium"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/championLeague"
+        app:layout_constraintBottom_toTopOf="@+id/homeNameLeague"
+        app:layout_constraintStart_toEndOf="@+id/stadium"/>
 
     <TextView
         android:id="@+id/homeNameLeague"
@@ -47,10 +44,9 @@
         android:textStyle="bold"
         android:paddingTop="20dp"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/play_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeLeague" />
+        app:layout_constraintTop_toBottomOf="@id/stadium"
+        app:layout_constraintBottom_toBottomOf="@id/awayNameLeague"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/awayNameLeague"
@@ -62,17 +58,16 @@
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/homeNameLeague"
         app:layout_constraintBottom_toBottomOf="@id/vw_divider"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/play_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sept 01, 2020"
+        android:layout_marginEnd="250dp"
         app:layout_constraintTop_toBottomOf="@id/awayNameLeague"
         app:layout_constraintBottom_toBottomOf="@id/vw_divider"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
         <View
@@ -80,6 +75,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray"
-            app:layout_constraintTop_toBottomOf="@+id/play_date"/>
+            app:layout_constraintTop_toBottomOf="@+id/awayNameLeague"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
