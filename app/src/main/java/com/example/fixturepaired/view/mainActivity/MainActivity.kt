@@ -2,7 +2,7 @@ package com.example.fixturepaired.view.mainActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fixturepaired.R
+import com.example.fixturepractice.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
