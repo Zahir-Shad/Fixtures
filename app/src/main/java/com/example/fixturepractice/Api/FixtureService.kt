@@ -7,7 +7,7 @@ import retrofit2.http.GET
 interface FixtureService {
 
 
-    @GET("cdn-og-test-api/test-task/fixtures.json")
+    @GET("/cdn-og-test-api/test-task/fixtures.json")
     suspend fun getFixtures() : Response<List<MyFixtures>>
 
 

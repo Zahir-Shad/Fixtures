@@ -41,8 +41,9 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRV()
         observeObservables()
+        setupRV()
+
     }
     private fun setupRV(){
         binding.rvFixture.apply {
@@ -53,7 +54,7 @@ class MainFragment : Fragment() {
     }
 
     private fun thisDataClicked(data: MyFixtures){
-        Toast.makeText(context, data.competitionStage.competition.name, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, data[0].competitionStage.competition.name, Toast.LENGTH_SHORT).show()
     }
 
     private fun observeObservables() {

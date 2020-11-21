@@ -7,9 +7,5 @@ class Repo {
         fun getInstance() = INSTANCE ?: Repo().also { INSTANCE = it }
     }
 
-    suspend fun getFixtures() = FixtureServiceImpl.getInstance().getFixtures()
-
-
-
-
+    suspend fun getAllFixtures() = FixtureServiceImpl.getInstance().getFixtures()
 }

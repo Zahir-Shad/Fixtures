@@ -13,10 +13,9 @@ import retrofit2.Response
 
 class MainViewModel: ViewModel() {
 
-    private val _fixtures = MutableLiveData<Resource<List<MyFixtures>>>()
+    private var _fixtures = MutableLiveData<Resource<List<MyFixtures>>>()
     val fixturesObservable: LiveData<Resource<List<MyFixtures>>>
         get() = _fixtures
-
 
     init {
         getFixtures()
@@ -25,7 +24,7 @@ class MainViewModel: ViewModel() {
     private fun getFixtures() {
         toggleLoading(_fixtures)
         viewModelScope.launch {
-            val response = Repo.getInstance().getFixtures()
+            val response = Repo.getInstance().getAllFixtures()
             handleResponse(_fixtures ,response)
         }
     }
@@ -35,13 +34,13 @@ class MainViewModel: ViewModel() {
     }
 
     private fun<T> handleResponse(
-        mutableLiveData: MutableLiveData<Resource<List<T>>>,
+        _fixtures: MutableLiveData<Resource<List<T>>>,
         response: Response<List<T>>
     ) {
         val resource = when {
             response.successWithData() -> Resource.success(response.body())
             else -> Resource.error("Something went wrong: ${response.message()}")
         }
-        mutableLiveData.postValue(resource)
+        _fixtures.postValue(resource)
     }
 }

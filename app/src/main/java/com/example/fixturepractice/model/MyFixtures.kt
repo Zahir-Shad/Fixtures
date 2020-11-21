@@ -4,9 +4,11 @@ import android.os.Parcelable
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 
+class MyFixtures : ArrayList<MyFixturesItem>()
+
 @Parcelize
 @JsonClass(generateAdapter = true)
-data class MyFixtures(
+data class MyFixturesItem(
     val awayTeam: AwayTeam,
     val competitionStage: CompetitionStage,
     val date: String,
